@@ -1,0 +1,5 @@
+* Generate predictions in csv format
+  - Set up package scaffolding
+  - Refactor current model
+
+
