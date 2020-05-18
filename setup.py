@@ -13,10 +13,12 @@ setuptools.setup(
     packages=st.find_packages(),
     zip_safe = False,
     install_requires = [
-        'pyyaml==5.3.1',
-        'click==7.1.2',
-        'numpy==1.18.4',
-        'scipy==1.4.1'
+        'pyyaml',
+        'click',
+        'numpy',
+        'scipy',
+        'pandas',
+        'matplotlib'
     ],
     python_requires='==3.7.7',
     entry_points = {
