@@ -2,10 +2,13 @@ import click
 import logging
 
 import yacomo
-import yacomo.util
+import yacomo.data
+import yacomo.simulator
+
 from yacomo.util import init_logging, log_error, log_warn, \
     log_debug, log_verbose, log_info, is_debug
-import yacomo.data
+
+
 
 @click.group()
 @click.option('--debug', default=False, is_flag=True)
@@ -60,5 +63,30 @@ def render(predictions_file, data_file, report_file):
     ## For debugging
 @main.command()
 def debug():
-    log_info("Test")
-    log_verbose("ting")
+
+    learned_params = {
+        'r0_before': 2.82004334,
+        'day_sd_start': 42.38768095,
+        'r0_after': 0.7997493,
+        'day_first_goner': 15.98899999,
+        'sigmoid_param': 0.43402217
+    }
+    config = {'smoothing_window_size': 1,
+              'days_to_death': 21,
+              'days_contagious': 8}
+    
+    simulator = yacomo.simulator.SimAntelope(config)
+    #simulator.set_parameters(**learned_params)
+    pred = yacomo.simulator.Predictor(simulator, **learned_params)
+    log_verbose(str(pred._simulator.parameters()))
+    pred_estimate = pred.run(50)
+    #log_verbose('pred_estimate: %s', str(pred_estimate))
+    
+    new_pred = yacomo.simulator.Predictor.from_parameters(pred.parameters())
+    log_verbose(str(new_pred._simulator.parameters()))
+    new_pred_estimate = new_pred.run(50)
+    #log_verbose('new_pred_estimate: %s', str(new_pred_estimate))
+
+    log_verbose('estimates:')
+    for pair in zip(pred_estimate, new_pred_estimate):
+        log_verbose(pair)

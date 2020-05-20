@@ -44,13 +44,16 @@ class TrApricot(Trainer):
         return predictor_params
 
     def _train_subregion(self, target_df):
+        # log_verbose('target_df:')
+        # log_verbose(target_df[40:60])
+        
         self._objective.set_target_df(target_df)
 
         bounds = [None]*len(self._PARAMS)
         for b in range(0, len(bounds)):
             bounds[b] = (self._op_bounds[self._PARAMS[b]]['min'],
                          self._op_bounds[self._PARAMS[b]]['max'])
-            log_debug('bounds: %s', str(bounds))
+        log_verbose('bounds: %s', str(bounds))
             
         # Initialize parameters to mid-point between bounds
         x0 = []
@@ -69,21 +72,20 @@ class TrApricot(Trainer):
 
         minimizer_kwargs = copy.deepcopy(self._minimizer_kwargs)
         minimizer_kwargs['bounds'] = bounds
-        log_verbose(x0)
-        log_verbose(self._niter)
-        log_verbose(minimizer_kwargs)
-        log_verbose(self._objective._target_df)
+
         result = scipy.optimize.basinhopping(
             lambda x: self._objective.compute(*x),
             x0,
             niter = self._niter,
             minimizer_kwargs = minimizer_kwargs,
+            stepsize = 0.5,
             callback = _basinhopping_callback,
             accept_test = _accept_test)
 
+        log_info('result: %s', str(result))
+        
         learned_params = {}
         for p, param in enumerate(self._PARAMS):
             learned_params[param] = result.x[p]
-        log_info('learned_params: %s', str(learned_params))
-
+        
         return yacomo.simulator.Predictor(self._simulator, **learned_params)

@@ -20,8 +20,8 @@ def _extract_from_jhu(data_fn, config):
     # TODO: This can likely be done more elegantly and mostly in pandas
     df = pd.read_csv(data_fn, quotechar='"', skipinitialspace=True)
 
-    # HACK.  Sometimes the cumulative death numbers are not increasing
-    df = df[df['Admin2'] != 'Unassigned']
+    # TODO: Validate data
+    # df = df[df['Admin2'] != 'Unassigned']
 
     start_date =df.columns[_JHU_US_FIRST_DAY_FIELD + 1]
     subregion_df = df.groupby([region_col, subregion_col]).sum().reset_index().to_numpy()
@@ -36,8 +36,14 @@ def _extract_from_jhu(data_fn, config):
     for r in (range(subregion_df.shape[0])):
         region = subregion_df[r][0]
         subregion = subregion_df[r][1]
-        log_debug(subregion)
+        log_verbose('Reading data for %s', subregion)
         if subregion_filter and subregion not in subregion_filter:
+            continue
+        total = daily_deaths_df[r].sum()
+        log_verbose('total: %d', total)
+        if total < config['subregion_min_deaths']:
+            log_info('Skipping %s', subregion)
+            
             continue
 
         dd = daily_deaths_df[r].tolist()
@@ -56,7 +62,7 @@ def extract(config_fn, output_fn):
         json.dump(output_dict, output_file, indent=4)
 
 def _format_subplot(ax, y_max):
-    ytick_interval = int(y_max/10/5)*5
+    ytick_interval = max(int(y_max/10/5)*5, 1)
     yticks = np.arange(0, y_max, ytick_interval)
     ax.set_yticks(yticks)
     for label in ax.get_yticklabels():
@@ -68,6 +74,9 @@ def _build_subplots(ax, region,
                     daily_pred, cum_pred,
                     date_labels):
 
+    log_verbose('Creating subplots for %s', region)
+
+    # Daily
     ax[0].set_title(region)
     ax[0].plot(daily_data)
     ax[0].plot(daily_pred, linestyle=':')
@@ -95,15 +104,13 @@ def _build_subplots(ax, region,
         
     xtick_indices = np.arange(0, len(daily_pred), 14)
     xtick_labels = date_labels[0::14]
-    log_verbose(xtick_labels)
     ax[0].set_xticks(xtick_indices)
     ax[0].set_xticklabels(xtick_labels)
 
     for label in ax[0].get_xticklabels():
         label.set_fontsize(5)
 
-
-    ###
+    # Cumulative
     ax[1].set_title(region)
     ax[1].plot(cum_data)
     ax[1].plot(cum_pred, linestyle=':')
@@ -131,7 +138,6 @@ def _build_subplots(ax, region,
 
     xtick_indices = np.arange(0, len(daily_pred), 14)
     xtick_labels = date_labels[0::14]
-    log_verbose(xtick_labels)
     ax[1].set_xticks(xtick_indices)
     ax[1].set_xticklabels(xtick_labels)
 
@@ -153,9 +159,9 @@ def render(predictions_fn, data_fn, report_fn):
         any_region = region
         any_subregion = list(region_data.keys())[0]
         region_daily_deaths = np.zeros(len(data['daily_deaths'][region][any_subregion]))
-        num_subregions += len(region_data)
         for subregion, subregion_data in region_data.items():
             region_daily_deaths += np.asarray(subregion_data)
+            num_subregions += 1
         data['daily_deaths'][region]['REGION'] = region_daily_deaths.tolist()
         num_subregions += 1
         
@@ -167,7 +173,7 @@ def render(predictions_fn, data_fn, report_fn):
         curr_date += dt.timedelta(days=1)
         date_labels.append((curr_date).strftime('%m-%d'))
         
-    fig, axs = plt.subplots(num_subregions, 2, figsize=(3*num_subregions, 11))
+    fig, axs = plt.subplots(num_subregions, 2, figsize=(8.5, 3.5*num_subregions))
     for region, region_data in predictions['data'].items():
 
         s = 0

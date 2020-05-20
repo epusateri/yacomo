@@ -36,7 +36,7 @@ class SimAntelope:
                        r0_after,
                        day_first_goner,
                        sigmoid_param):
-        
+
         # Parameters to model R0
         self._r0_before = r0_before
         self._day_sd_start = day_sd_start
@@ -65,6 +65,9 @@ class SimAntelope:
         
     def _compute_r0(self, n_days):
         day = np.arange(-self._day_sd_start, n_days - self._day_sd_start)
+        # log_verbose('day: %s' % (day))
+        # log_verbose('day_sd_start: %d' % (self._day_sd_start))
+        # log_verbose('n_days: %d' % (n_days))
         sigmoid = -1/(1 + np.exp(-self._sigmoid_param * day)) * (self._r0_before - self._r0_after) + self._r0_before
         r0 = sigmoid
         return r0
@@ -74,20 +77,20 @@ class SimAntelope:
 
         daily_goners = [0.0]*n_days
         
-        # Smooth initial goner day
-        first_goner_day = self._day_first_goner - self._days_contagious/2.0
+        # Smooth initial goner day        
+        first_goner_day = self._day_first_goner - self._days_contagious/2.0 + 0.01
         for delta in range(0, self._days_contagious):
             day = first_goner_day + delta
-
+            
             day_floor = int(np.floor(day))
             day_ceil = int(np.ceil(day))
 
-            left_frac = day - day_floor
-            right_frac = day_ceil - day
+            right_frac = day - day_floor
+            left_frac = day_ceil - day
 
             daily_goners[day_floor] += left_frac/self._days_contagious
             daily_goners[day_ceil] += right_frac/self._days_contagious
-
+            
         # Run simulation
         for day in range(0, n_days):
             for c in range(1, self._days_contagious + 1):

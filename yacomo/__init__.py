@@ -6,7 +6,7 @@ import collections
 import yacomo
 import yacomo.trainer
 import yacomo.simulator
-
+from yacomo.util import log_error, log_warn, log_info, log_verbose, log_debug, is_debug
 
 def train(config_fn, data_fn, predictor_fn):
     with open(config_fn, encoding='utf-8') as config_fh:
@@ -45,6 +45,8 @@ def predict(predictor_fn, n_days, predictions_fn):
         for subregion, daily_deaths in region_data.items():
             predictor = yacomo.simulator.Predictor.from_parameters(
                 predictor_params[region][subregion])
+            log_verbose(predictor._simulator.parameters())
+            log_verbose('Predicting for %s', subregion)
             daily_deaths = predictor.run(n_days)
             region_preds[subregion]['daily_deaths'] = daily_deaths
             region_preds[subregion]['cumulative_deaths'] = np.cumsum(daily_deaths).tolist()
