@@ -108,7 +108,7 @@ def _build_subplots(ax, region,
     ax[0].set_xticklabels(xtick_labels)
 
     for label in ax[0].get_xticklabels():
-        label.set_fontsize(5)
+        label.set_fontsize(4)
 
     # Cumulative
     ax[1].set_title(region)
@@ -142,7 +142,7 @@ def _build_subplots(ax, region,
     ax[1].set_xticklabels(xtick_labels)
 
     for label in ax[1].get_xticklabels():
-        label.set_fontsize(5)
+        label.set_fontsize(4)
 
 
 def render(predictions_fn, data_fn, report_fn):
