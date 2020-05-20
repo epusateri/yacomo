@@ -1,4 +1,4 @@
-data_file: /Users/ernie/Playspace/playgrounds/covid19/repos/yacomo/predictions/20200517/time_series_covid19_deaths_US.csv
+data_file: /Users/ernie/Playspace/playgrounds/covid19/repos/yacomo/predictions/20200519/time_series_covid19_deaths_US.csv
 type: jhu_deaths_US
 extract:
   region_column: Country_Region

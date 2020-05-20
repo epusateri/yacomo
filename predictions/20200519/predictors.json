@@ -9,11 +9,11 @@
                     "days_contagious": 8
                 },
                 "learned": {
-                    "r0_before": 1.4005857232683865,
-                    "day_sd_start": 57.971774950658556,
-                    "r0_after": 0.99,
-                    "sigmoid_param": 5.0,
-                    "day_first_goner": 10.418559076722778
+                    "r0_before": 1.3256531917243144,
+                    "day_sd_start": 91.66474922754287,
+                    "r0_after": 0.01,
+                    "sigmoid_param": 0.1,
+                    "day_first_goner": 9.001
                 }
             },
             "Arizona": {
@@ -23,11 +23,25 @@
                     "days_contagious": 8
                 },
                 "learned": {
-                    "r0_before": 1.3301411512799906,
-                    "day_sd_start": 77.28743809094857,
-                    "r0_after": 0.99,
+                    "r0_before": 1.310556396412489,
+                    "day_sd_start": 83.46178174687317,
+                    "r0_after": 0.6803986468315714,
                     "sigmoid_param": 5.0,
                     "day_first_goner": 9.001
+                }
+            },
+            "Arkansas": {
+                "fixed": {
+                    "smoothing_window_size": 1,
+                    "days_to_death": 21,
+                    "days_contagious": 8
+                },
+                "learned": {
+                    "r0_before": 1.2436738792633502,
+                    "day_sd_start": 77.27808821266416,
+                    "r0_after": 0.5410768141519207,
+                    "sigmoid_param": 5.0,
+                    "day_first_goner": 23.52731336692704
                 }
             },
             "California": {
@@ -37,10 +51,10 @@
                     "days_contagious": 8
                 },
                 "learned": {
-                    "r0_before": 1.739108390496424,
-                    "day_sd_start": 48.917005485733746,
-                    "r0_after": 0.9862088305760955,
-                    "sigmoid_param": 0.21798246329419615,
+                    "r0_before": 1.6404531162611709,
+                    "day_sd_start": 54.90221387835629,
+                    "r0_after": 0.9807135263693348,
+                    "sigmoid_param": 0.24807679396841506,
                     "day_first_goner": 9.001
                 }
             },
@@ -51,10 +65,10 @@
                     "days_contagious": 8
                 },
                 "learned": {
-                    "r0_before": 1.5492730048026886,
-                    "day_sd_start": 52.11690052421432,
-                    "r0_after": 0.99,
-                    "sigmoid_param": 2.0003357214566724,
+                    "r0_before": 1.4453125882302007,
+                    "day_sd_start": 63.599844433910825,
+                    "r0_after": 0.9463416776978703,
+                    "sigmoid_param": 5.0,
                     "day_first_goner": 9.001
                 }
             },
@@ -65,11 +79,11 @@
                     "days_contagious": 8
                 },
                 "learned": {
-                    "r0_before": 1.8301405359615563,
-                    "day_sd_start": 54.59354103434787,
-                    "r0_after": 0.8852161248750037,
-                    "sigmoid_param": 0.3883634589492381,
-                    "day_first_goner": 15.649080778973797
+                    "r0_before": 1.8564683531470412,
+                    "day_sd_start": 58.439909619358225,
+                    "r0_after": 0.8748629498029508,
+                    "sigmoid_param": 0.3498197792606384,
+                    "day_first_goner": 20.42694226261235
                 }
             },
             "Delaware": {
@@ -79,11 +93,11 @@
                     "days_contagious": 8
                 },
                 "learned": {
-                    "r0_before": 2.1890705655423037,
-                    "day_sd_start": 45.424016428204766,
+                    "r0_before": 1.9844519896376596,
+                    "day_sd_start": 54.15031564536003,
                     "r0_after": 0.99,
-                    "sigmoid_param": 0.1,
-                    "day_first_goner": 33.76211850439761
+                    "sigmoid_param": 0.13131274085922662,
+                    "day_first_goner": 37.989881879068015
                 }
             },
             "District of Columbia": {
@@ -93,11 +107,11 @@
                     "days_contagious": 8
                 },
                 "learned": {
-                    "r0_before": 1.4048863804399097,
-                    "day_sd_start": 64.42942498026073,
-                    "r0_after": 0.9313730181917009,
+                    "r0_before": 1.4051385601839328,
+                    "day_sd_start": 68.4359000392678,
+                    "r0_after": 0.9305100885796399,
                     "sigmoid_param": 5.0,
-                    "day_first_goner": 17.389735850613324
+                    "day_first_goner": 21.40984938922144
                 }
             },
             "Florida": {
@@ -107,11 +121,11 @@
                     "days_contagious": 8
                 },
                 "learned": {
-                    "r0_before": 1.6328469675619839,
-                    "day_sd_start": 50.99023380673064,
-                    "r0_after": 0.99,
+                    "r0_before": 1.5737765994863184,
+                    "day_sd_start": 55.42208375981123,
+                    "r0_after": 0.9776990400982953,
                     "sigmoid_param": 5.0,
-                    "day_first_goner": 9.001
+                    "day_first_goner": 9.208655201811531
                 }
             },
             "Georgia": {
@@ -121,11 +135,11 @@
                     "days_contagious": 8
                 },
                 "learned": {
-                    "r0_before": 1.6501738094857252,
-                    "day_sd_start": 48.406889333506385,
-                    "r0_after": 0.968814892807697,
+                    "r0_before": 1.6244703723500011,
+                    "day_sd_start": 52.439685657979865,
+                    "r0_after": 0.9661054025402662,
                     "sigmoid_param": 5.0,
-                    "day_first_goner": 9.001
+                    "day_first_goner": 11.500160871402423
                 }
             },
             "Illinois": {
@@ -135,11 +149,11 @@
                     "days_contagious": 8
                 },
                 "learned": {
-                    "r0_before": 3.689221114786677,
-                    "day_sd_start": 30.0,
+                    "r0_before": 5.0,
+                    "day_sd_start": 31.926186787812345,
                     "r0_after": 0.99,
-                    "sigmoid_param": 0.10006897594205431,
-                    "day_first_goner": 22.437257751966985
+                    "sigmoid_param": 0.11102865294471569,
+                    "day_first_goner": 29.645973243149513
                 }
             },
             "Indiana": {
@@ -149,11 +163,11 @@
                     "days_contagious": 8
                 },
                 "learned": {
-                    "r0_before": 3.925254372831124,
-                    "day_sd_start": 30.0,
-                    "r0_after": 0.9600926565191569,
+                    "r0_before": 1.6192750724209979,
+                    "day_sd_start": 60.029006447063345,
+                    "r0_after": 0.8487286079587729,
                     "sigmoid_param": 0.1,
-                    "day_first_goner": 26.080578723219382
+                    "day_first_goner": 12.029105286513808
                 }
             },
             "Iowa": {
@@ -163,11 +177,11 @@
                     "days_contagious": 8
                 },
                 "learned": {
-                    "r0_before": 1.4185109879000164,
-                    "day_sd_start": 68.65734657149574,
-                    "r0_after": 0.99,
-                    "sigmoid_param": 0.1,
-                    "day_first_goner": 20.656101558680582
+                    "r0_before": 1.2894682675926323,
+                    "day_sd_start": 91.06812914983928,
+                    "r0_after": 0.01,
+                    "sigmoid_param": 0.20331798762220157,
+                    "day_first_goner": 13.530932668858474
                 }
             },
             "Kansas": {
@@ -177,11 +191,11 @@
                     "days_contagious": 8
                 },
                 "learned": {
-                    "r0_before": 1.747384306437273,
-                    "day_sd_start": 50.20332666303035,
-                    "r0_after": 0.9149945059903509,
+                    "r0_before": 1.7613357805758862,
+                    "day_sd_start": 54.287827469069505,
+                    "r0_after": 0.9006269460474051,
                     "sigmoid_param": 5.0,
-                    "day_first_goner": 29.609956651481088
+                    "day_first_goner": 33.85631205979504
                 }
             },
             "Kentucky": {
@@ -191,11 +205,11 @@
                     "days_contagious": 8
                 },
                 "learned": {
-                    "r0_before": 2.7011891890298734,
-                    "day_sd_start": 44.2927835826719,
-                    "r0_after": 0.9591029540316417,
+                    "r0_before": 2.6140905655524342,
+                    "day_sd_start": 48.106489647356945,
+                    "r0_after": 0.9836487439085073,
                     "sigmoid_param": 5.0,
-                    "day_first_goner": 34.1662828850499
+                    "day_first_goner": 37.68186440884048
                 }
             },
             "Louisiana": {
@@ -205,11 +219,11 @@
                     "days_contagious": 8
                 },
                 "learned": {
-                    "r0_before": 4.276355220130222,
-                    "day_sd_start": 30.0,
-                    "r0_after": 0.8565047911911893,
-                    "sigmoid_param": 0.13121596203125027,
-                    "day_first_goner": 23.030076788068204
+                    "r0_before": 5.0,
+                    "day_sd_start": 32.72429932181952,
+                    "r0_after": 0.8721839393091876,
+                    "sigmoid_param": 0.13858718786233434,
+                    "day_first_goner": 28.30702220690708
                 }
             },
             "Maryland": {
@@ -219,11 +233,11 @@
                     "days_contagious": 8
                 },
                 "learned": {
-                    "r0_before": 1.6700892108860825,
-                    "day_sd_start": 59.7400730896272,
-                    "r0_after": 0.9637466769814427,
+                    "r0_before": 1.67685675018469,
+                    "day_sd_start": 63.79564309092564,
+                    "r0_after": 0.9550038268278902,
                     "sigmoid_param": 5.0,
-                    "day_first_goner": 17.637360274209065
+                    "day_first_goner": 21.952416657880278
                 }
             },
             "Massachusetts": {
@@ -233,9 +247,9 @@
                     "days_contagious": 8
                 },
                 "learned": {
-                    "r0_before": 1.679353731915825,
-                    "day_sd_start": 60.00393600482309,
-                    "r0_after": 0.9124504555602003,
+                    "r0_before": 1.6231005091844894,
+                    "day_sd_start": 64.28259815872197,
+                    "r0_after": 0.8971369973430166,
                     "sigmoid_param": 5.0,
                     "day_first_goner": 9.001
                 }
@@ -248,10 +262,10 @@
                 },
                 "learned": {
                     "r0_before": 5.0,
-                    "day_sd_start": 30.76913218381276,
-                    "r0_after": 0.7959394535764258,
-                    "sigmoid_param": 0.11632423844314005,
-                    "day_first_goner": 24.696057441797414
+                    "day_sd_start": 34.95707387118427,
+                    "r0_after": 0.7983781729548011,
+                    "sigmoid_param": 0.11796156941652122,
+                    "day_first_goner": 28.80877238108046
                 }
             },
             "Minnesota": {
@@ -261,11 +275,11 @@
                     "days_contagious": 8
                 },
                 "learned": {
-                    "r0_before": 1.5677011521831452,
-                    "day_sd_start": 63.88606772884944,
-                    "r0_after": 0.99,
-                    "sigmoid_param": 0.420130526550584,
-                    "day_first_goner": 24.09967538930955
+                    "r0_before": 1.4833499302704787,
+                    "day_sd_start": 70.10501377311694,
+                    "r0_after": 0.9665984101422708,
+                    "sigmoid_param": 2.9902411701292806,
+                    "day_first_goner": 23.324046806207797
                 }
             },
             "Mississippi": {
@@ -275,11 +289,11 @@
                     "days_contagious": 8
                 },
                 "learned": {
-                    "r0_before": 1.5544941248473911,
-                    "day_sd_start": 52.27588358850568,
+                    "r0_before": 1.552269632027593,
+                    "day_sd_start": 56.34201483145206,
                     "r0_after": 0.99,
                     "sigmoid_param": 0.1,
-                    "day_first_goner": 16.254123313363557
+                    "day_first_goner": 20.17225997876949
                 }
             },
             "Missouri": {
@@ -290,10 +304,10 @@
                 },
                 "learned": {
                     "r0_before": 5.0,
-                    "day_sd_start": 45.48719476579179,
+                    "day_sd_start": 49.48389173686771,
                     "r0_after": 0.99,
                     "sigmoid_param": 5.0,
-                    "day_first_goner": 41.019124717422926
+                    "day_first_goner": 45.02141802857625
                 }
             },
             "Nebraska": {
@@ -303,11 +317,11 @@
                     "days_contagious": 8
                 },
                 "learned": {
-                    "r0_before": 1.5016714556918591,
-                    "day_sd_start": 61.32447755394486,
-                    "r0_after": 0.99,
+                    "r0_before": 1.4956026234696027,
+                    "day_sd_start": 65.12130912465183,
+                    "r0_after": 0.973706403773879,
                     "sigmoid_param": 5.0,
-                    "day_first_goner": 35.99000096168101
+                    "day_first_goner": 39.99000016082808
                 }
             },
             "Nevada": {
@@ -317,11 +331,11 @@
                     "days_contagious": 8
                 },
                 "learned": {
-                    "r0_before": 2.0549653952315943,
-                    "day_sd_start": 43.70464514687985,
-                    "r0_after": 0.9721083656604503,
-                    "sigmoid_param": 0.4366687199099481,
-                    "day_first_goner": 27.590057392785766
+                    "r0_before": 1.65197546187397,
+                    "day_sd_start": 52.418297678943816,
+                    "r0_after": 0.9511542697959371,
+                    "sigmoid_param": 5.0,
+                    "day_first_goner": 25.459472536198643
                 }
             },
             "New Hampshire": {
@@ -331,11 +345,11 @@
                     "days_contagious": 8
                 },
                 "learned": {
-                    "r0_before": 1.2917081375756352,
-                    "day_sd_start": 78.3898542885155,
-                    "r0_after": 0.99,
+                    "r0_before": 1.324981374459405,
+                    "day_sd_start": 82.51653283191138,
+                    "r0_after": 0.6522766566052614,
                     "sigmoid_param": 5.0,
-                    "day_first_goner": 23.525125493222923
+                    "day_first_goner": 31.56221369085454
                 }
             },
             "New Jersey": {
@@ -346,10 +360,10 @@
                 },
                 "learned": {
                     "r0_before": 5.0,
-                    "day_sd_start": 34.939109329187964,
-                    "r0_after": 0.8843230582028461,
-                    "sigmoid_param": 0.1468220409183408,
-                    "day_first_goner": 26.755515249402098
+                    "day_sd_start": 37.32690305365614,
+                    "r0_after": 0.8555218504148419,
+                    "sigmoid_param": 0.12678762960096351,
+                    "day_first_goner": 29.59271500333524
                 }
             },
             "New Mexico": {
@@ -359,11 +373,11 @@
                     "days_contagious": 8
                 },
                 "learned": {
-                    "r0_before": 1.9003681083213368,
-                    "day_sd_start": 52.47780839947971,
-                    "r0_after": 0.99,
+                    "r0_before": 1.707166066414481,
+                    "day_sd_start": 64.4640021877239,
+                    "r0_after": 0.8868427323407436,
                     "sigmoid_param": 0.1,
-                    "day_first_goner": 34.65586732088035
+                    "day_first_goner": 36.99000147618813
                 }
             },
             "New York": {
@@ -373,11 +387,11 @@
                     "days_contagious": 8
                 },
                 "learned": {
-                    "r0_before": 2.9093357179534167,
-                    "day_sd_start": 40.065716327470135,
-                    "r0_after": 0.7918014359451961,
-                    "sigmoid_param": 0.27974538517910785,
-                    "day_first_goner": 13.909531992032006
+                    "r0_before": 2.885428394774826,
+                    "day_sd_start": 44.1579316701045,
+                    "r0_after": 0.7937340918937531,
+                    "sigmoid_param": 0.2836578270331745,
+                    "day_first_goner": 17.73209575989771
                 }
             },
             "North Carolina": {
@@ -387,11 +401,11 @@
                     "days_contagious": 8
                 },
                 "learned": {
-                    "r0_before": 1.5982599784545917,
-                    "day_sd_start": 57.31997695202968,
-                    "r0_after": 0.99,
+                    "r0_before": 1.6304527518439216,
+                    "day_sd_start": 61.561941222634275,
+                    "r0_after": 0.9531027002665576,
                     "sigmoid_param": 5.0,
-                    "day_first_goner": 21.425953968596854
+                    "day_first_goner": 26.797501869098323
                 }
             },
             "Ohio": {
@@ -401,11 +415,11 @@
                     "days_contagious": 8
                 },
                 "learned": {
-                    "r0_before": 2.1417963991087166,
-                    "day_sd_start": 43.63235895920015,
-                    "r0_after": 0.9480110676376021,
+                    "r0_before": 2.0978471050653855,
+                    "day_sd_start": 48.51881138833537,
+                    "r0_after": 0.9399052771572188,
                     "sigmoid_param": 0.1,
-                    "day_first_goner": 20.469954212785442
+                    "day_first_goner": 24.05257682322522
                 }
             },
             "Oklahoma": {
@@ -415,11 +429,11 @@
                     "days_contagious": 8
                 },
                 "learned": {
-                    "r0_before": 1.9431259394968377,
-                    "day_sd_start": 45.27841155678741,
-                    "r0_after": 0.9256424491060486,
-                    "sigmoid_param": 5.0,
-                    "day_first_goner": 26.99390139532733
+                    "r0_before": 4.750407742265096,
+                    "day_sd_start": 30.0,
+                    "r0_after": 0.8043296004556857,
+                    "sigmoid_param": 0.1,
+                    "day_first_goner": 33.06112740536118
                 }
             },
             "Oregon": {
@@ -429,11 +443,11 @@
                     "days_contagious": 8
                 },
                 "learned": {
-                    "r0_before": 1.4509111305809632,
-                    "day_sd_start": 50.363619256497635,
-                    "r0_after": 0.9093161784859979,
+                    "r0_before": 1.4805629225868027,
+                    "day_sd_start": 54.36685451229655,
+                    "r0_after": 0.8981997956380791,
                     "sigmoid_param": 5.0,
-                    "day_first_goner": 21.4737219226907
+                    "day_first_goner": 26.989999924201996
                 }
             },
             "Pennsylvania": {
@@ -443,11 +457,11 @@
                     "days_contagious": 8
                 },
                 "learned": {
-                    "r0_before": 1.7124848671361366,
-                    "day_sd_start": 57.3706521314722,
-                    "r0_after": 0.99,
+                    "r0_before": 1.7163452013906582,
+                    "day_sd_start": 61.42757082334726,
+                    "r0_after": 0.9723279097763203,
                     "sigmoid_param": 5.0,
-                    "day_first_goner": 12.073883139902865
+                    "day_first_goner": 16.272375295172015
                 }
             },
             "Puerto Rico": {
@@ -457,11 +471,11 @@
                     "days_contagious": 8
                 },
                 "learned": {
-                    "r0_before": 2.1536240385431036,
-                    "day_sd_start": 45.53406001208853,
-                    "r0_after": 0.9284120718400759,
+                    "r0_before": 2.162353750097195,
+                    "day_sd_start": 49.637819285649904,
+                    "r0_after": 0.9143572747230954,
                     "sigmoid_param": 5.0,
-                    "day_first_goner": 34.98999988091554
+                    "day_first_goner": 38.98999974364302
                 }
             },
             "Rhode Island": {
@@ -471,11 +485,11 @@
                     "days_contagious": 8
                 },
                 "learned": {
-                    "r0_before": 1.7052283147862388,
-                    "day_sd_start": 56.81264495725396,
+                    "r0_before": 1.6014954618110404,
+                    "day_sd_start": 62.21994748721469,
                     "r0_after": 0.99,
-                    "sigmoid_param": 1.4175022329276503,
-                    "day_first_goner": 28.502694509337772
+                    "sigmoid_param": 5.0,
+                    "day_first_goner": 29.064642425785866
                 }
             },
             "South Carolina": {
@@ -485,11 +499,11 @@
                     "days_contagious": 8
                 },
                 "learned": {
-                    "r0_before": 1.324556372036479,
-                    "day_sd_start": 70.46462053155678,
-                    "r0_after": 0.7211504151565669,
+                    "r0_before": 1.309815962003042,
+                    "day_sd_start": 74.44189173197128,
+                    "r0_after": 0.7515960375588506,
                     "sigmoid_param": 5.0,
-                    "day_first_goner": 9.001
+                    "day_first_goner": 10.591474705411143
                 }
             },
             "Tennessee": {
@@ -499,11 +513,11 @@
                     "days_contagious": 8
                 },
                 "learned": {
-                    "r0_before": 3.594658911333766,
-                    "day_sd_start": 40.67522402397177,
-                    "r0_after": 0.9742609891741119,
+                    "r0_before": 3.5956054147827516,
+                    "day_sd_start": 44.771027121834784,
+                    "r0_after": 0.9636423720715928,
                     "sigmoid_param": 5.0,
-                    "day_first_goner": 34.99000007471192
+                    "day_first_goner": 38.99000001182985
                 }
             },
             "Texas": {
@@ -513,11 +527,11 @@
                     "days_contagious": 8
                 },
                 "learned": {
-                    "r0_before": 1.5914691231370652,
-                    "day_sd_start": 52.096568598403806,
+                    "r0_before": 5.0,
+                    "day_sd_start": 32.42951046805861,
                     "r0_after": 0.99,
-                    "sigmoid_param": 5.0,
-                    "day_first_goner": 10.857885227615993
+                    "sigmoid_param": 0.13051501065706061,
+                    "day_first_goner": 31.929374635921334
                 }
             },
             "Virginia": {
@@ -527,11 +541,11 @@
                     "days_contagious": 8
                 },
                 "learned": {
-                    "r0_before": 2.30859945120335,
-                    "day_sd_start": 45.75703559667811,
-                    "r0_after": 0.9145201380271658,
-                    "sigmoid_param": 0.1,
-                    "day_first_goner": 27.24471572737417
+                    "r0_before": 1.5207720940194989,
+                    "day_sd_start": 63.609039431742076,
+                    "r0_after": 0.9711534055210232,
+                    "sigmoid_param": 5.0,
+                    "day_first_goner": 18.212053640824628
                 }
             },
             "Washington": {
@@ -541,10 +555,10 @@
                     "days_contagious": 8
                 },
                 "learned": {
-                    "r0_before": 1.8056026925994801,
-                    "day_sd_start": 38.64036632045415,
-                    "r0_after": 0.8994806743703773,
-                    "sigmoid_param": 0.2981081719302471,
+                    "r0_before": 1.6132821415672105,
+                    "day_sd_start": 47.42778087828392,
+                    "r0_after": 0.8972059085527921,
+                    "sigmoid_param": 5.0,
                     "day_first_goner": 9.001
                 }
             },
@@ -555,11 +569,11 @@
                     "days_contagious": 8
                 },
                 "learned": {
-                    "r0_before": 2.4087454959100643,
-                    "day_sd_start": 44.39297733431028,
-                    "r0_after": 0.9606129209389487,
+                    "r0_before": 2.4477592387620897,
+                    "day_sd_start": 48.4387373565753,
+                    "r0_after": 0.9497440836055162,
                     "sigmoid_param": 5.0,
-                    "day_first_goner": 30.730891621764577
+                    "day_first_goner": 34.989999552389115
                 }
             }
         }

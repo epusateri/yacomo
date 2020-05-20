@@ -19,14 +19,17 @@ def _extract_from_jhu(data_fn, config):
 
     # TODO: This can likely be done more elegantly and mostly in pandas
     df = pd.read_csv(data_fn, quotechar='"', skipinitialspace=True)
-
+    to_drop = [c for c in df.columns[:_JHU_US_FIRST_DAY_FIELD] if c != region_col and c!= subregion_col]
+    df = df.drop(columns=to_drop)
+    
     # TODO: Validate data
-    # df = df[df['Admin2'] != 'Unassigned']
 
-    start_date =df.columns[_JHU_US_FIRST_DAY_FIELD + 1]
+    start_date = df.columns[3]
+    log_verbose('start_date: %s', start_date)
+
     subregion_df = df.groupby([region_col, subregion_col]).sum().reset_index().to_numpy()
-
-    cum_deaths_df = subregion_df[:,12:]
+    cum_deaths_df = subregion_df[:,2:]
+        
     offset_cum_deaths_df = cum_deaths_df[:, 1:]
     daily_deaths_df = offset_cum_deaths_df - cum_deaths_df[:, :-1]
 
@@ -40,7 +43,6 @@ def _extract_from_jhu(data_fn, config):
         if subregion_filter and subregion not in subregion_filter:
             continue
         total = daily_deaths_df[r].sum()
-        log_verbose('total: %d', total)
         if total < config['subregion_min_deaths']:
             log_info('Skipping %s', subregion)
             
@@ -168,10 +170,15 @@ def render(predictions_fn, data_fn, report_fn):
     num_days = len(predictions['data'][any_region][any_subregion]['daily_deaths'])
     start_date_str = predictions['start_date']
     curr_date = dt.datetime.strptime(start_date_str, '%m/%d/%y')
-    date_labels = [curr_date.strftime('%Y-%m-%d')]
-    for d in range(1, num_days):
+    log_verbose('curr_date: %s', curr_date)
+    date_labels = [curr_date.strftime('%m-%d')]
+    for d in range(1, num_days+1):
         curr_date += dt.timedelta(days=1)
         date_labels.append((curr_date).strftime('%m-%d'))
+
+    log_verbose(date_labels)
+    log_verbose(len(region_daily_deaths))
+    log_verbose(date_labels[len(region_daily_deaths)])
         
     fig, axs = plt.subplots(num_subregions, 2, figsize=(8.5, 3.5*num_subregions))
     for region, region_data in predictions['data'].items():

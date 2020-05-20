@@ -1,8 +1,8 @@
 #!/bin/bash
 
-git rev-parse HEAD > hash
+# git rev-parse HEAD > hash
 
-curl -O https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_US.csv
+# curl -O https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_US.csv
 
 yacomo \
     --verbose \
