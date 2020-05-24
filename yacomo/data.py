@@ -21,7 +21,13 @@ def _extract_from_jhu(data_fn, config):
     df = pd.read_csv(data_fn, quotechar='"', skipinitialspace=True)
     to_drop = [c for c in df.columns[:_JHU_US_FIRST_DAY_FIELD] if c != region_col and c!= subregion_col]
     df = df.drop(columns=to_drop)
-    
+
+    if 'end_date' in config:
+        end_date = dt.datetime.strptime(config['end_date'], '%Y-%m-%d')
+        to_drop = [c for c in df.columns[2:] if dt.datetime.strptime(c, '%m/%d/%y') > end_date]
+        log_verbose(to_drop)
+        df = df.drop(columns=to_drop)
+
     # TODO: Validate data
 
     start_date = df.columns[3]
@@ -80,7 +86,7 @@ def _build_subplots(ax, region,
 
     # Daily
     ax[0].set_title(region)
-    ax[0].plot(daily_data)
+    ax[0].plot(daily_data, linestyle='None', marker='o', markersize=2)
     ax[0].plot(daily_pred, linestyle=':')
     ax[0].set_xlabel('day')
     ax[0].set_ylabel('daily deaths')
